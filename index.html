@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Expense Tracker</p>
+          <h1>Take control of your money</h1>
+          <p class="hero-text">
+            Monitor income, review expenses, and stay on top of your finances in one place.
+          </p>
+        </div>
+        <div class="hero-card">
+          <p>Current balance</p>
+          <h2 id="balanceAmount">$0.00</h2>
+        </div>
+      </header>
+
+      <section class="summary-grid" aria-label="Financial summary">
+        <article class="summary-card income">
+          <p>Total income</p>
+          <h3 id="incomeAmount">$0.00</h3>
+        </article>
+        <article class="summary-card expense">
+          <p>Total expenses</p>
+          <h3 id="expenseAmount">$0.00</h3>
+        </article>
+        <article class="summary-card balance">
+          <p>Balance</p>
+          <h3 id="balanceSummary">$0.00</h3>
+        </article>
+        <article class="summary-card insight">
+          <p>Insight</p>
+          <h3 id="insightText">Add your first transaction to begin.</h3>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <form id="transactionForm" class="panel">
+          <div class="panel-header">
+            <h2 id="formTitle">Add a transaction</h2>
+            <button type="button" id="cancelEditBtn" class="ghost-btn hidden">Cancel</button>
+          </div>
+
+          <div class="field-group">
+            <label for="typeSelect">Transaction type</label>
+            <select id="typeSelect" required>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="descriptionInput">Description</label>
+            <input id="descriptionInput" type="text" placeholder="e.g. Grocery shopping" required />
+          </div>
+
+          <div class="field-group">
+            <label for="amountInput">Amount</label>
+            <input id="amountInput" type="number" min="0.01" step="0.01" placeholder="0.00" required />
+          </div>
+
+          <div class="field-group">
+            <label for="categorySelect">Category</label>
+            <select id="categorySelect" required></select>
+          </div>
+
+          <div class="field-group">
+            <label for="dateInput">Date</label>
+            <input id="dateInput" type="date" required />
+          </div>
+
+          <button class="primary-btn" type="submit">Save transaction</button>
+        </form>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Transaction history</h2>
+            <div class="filters">
+              <label>
+                Type
+                <select id="typeFilter">
+                  <option value="all">All</option>
+                  <option value="income">Income</option>
+                  <option value="expense">Expense</option>
+                </select>
+              </label>
+              <label>
+                Category
+                <select id="categoryFilter">
+                  <option value="all">All categories</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div id="transactionsList" class="transaction-list"></div>
+        </section>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
