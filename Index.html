@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Blog Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-group">
+        <a class="brand" href="#home">BlogHub</a>
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">Dark</button>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#articles">Articles</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Inspiration for modern creators</p>
+          <h1>Stories, guides, and ideas for digital makers.</h1>
+          <p>Discover featured posts, browse categories, search articles, and read in a responsive, polished layout that works on every device.</p>
+          <div class="hero-actions">
+            <a href="#articles" class="button button-primary">Explore Articles</a>
+            <a href="#categories" class="button button-secondary">Browse Categories</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card featured-card">
+            <span class="card-label">Featured</span>
+            <h2>Design systems that scale for teams</h2>
+            <p>Learn how to keep consistency while empowering flexibility across every product experience.</p>
+            <div class="meta-row"><span>Jun 20, 2026</span><span>Design</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-panel" id="articles">
+        <div class="search-header">
+          <div>
+            <p class="eyebrow">Search</p>
+            <h2>Find the right article fast</h2>
+          </div>
+          <div class="load-state" id="matchCount"></div>
+        </div>
+        <div class="search-bar">
+          <input type="search" id="searchInput" placeholder="Search by title, excerpt, category, or tag" aria-label="Search articles" />
+          <button id="searchClear" aria-label="Clear search">Clear</button>
+        </div>
+      </section>
+
+      <section class="categories-section" id="categories">
+        <div class="section-heading">
+          <p class="eyebrow">Categories</p>
+          <h2>Browse by topic</h2>
+        </div>
+        <div class="category-grid" id="categoryList"></div>
+      </section>
+
+      <section class="cards-grid" id="postGrid"></section>
+      <div class="action-row">
+        <button id="loadMoreBtn" class="button button-primary">Load More</button>
+      </div>
+
+      <section class="post-detail modal" id="postDetail" aria-hidden="true">
+        <div class="detail-panel">
+          <button class="close-detail" id="closeDetail" aria-label="Close article detail">×</button>
+          <div class="detail-meta" id="detailMeta"></div>
+          <h2 id="detailTitle"></h2>
+          <p class="detail-excerpt" id="detailExcerpt"></p>
+          <img id="detailImage" alt="Featured article image" />
+          <div class="detail-body" id="detailBody"></div>
+          <div class="detail-tags" id="detailTags"></div>
+          <div class="share-panel">
+            <p>Share this article</p>
+            <div class="share-buttons">
+              <a href="#" class="share-button" id="shareTwitter">Twitter</a>
+              <a href="#" class="share-button" id="shareLinkedIn">LinkedIn</a>
+              <a href="#" class="share-button" id="shareEmail">Email</a>
+            </div>
+          </div>
+          <div class="related-section">
+            <h3>Related articles</h3>
+            <div class="related-grid" id="relatedGrid"></div>
+          </div>
+          <div class="comments-panel">
+            <h3>Comments</h3>
+            <p class="comments-note">Join the conversation and share your thoughts.</p>
+            <div id="commentList" class="comment-list"></div>
+            <form id="commentForm" class="comment-form">
+              <textarea id="commentInput" rows="4" placeholder="Write a comment..." required></textarea>
+              <button type="submit" class="button button-primary">Post comment</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About this blog</p>
+          <h2>Readable content, designed for action</h2>
+        </div>
+        <p class="about-text">This demo blog features elegant typography, responsive cards, search, category filtering, dark mode, and article detail experiences. It is built to feel clean and professional on desktop, tablet, and mobile devices.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-brand">BlogHub</p>
+        <p>Modern writing for teams, designers, and developers.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#articles">Articles</a>
+        <a href="#categories">Categories</a>
+      </div>
+    </footer>
+  </div>
+  <script src="Script.js"></script>
+</body>
+</html>
